@@ -23,8 +23,12 @@ const linebotParser = bot.parser();
 // 當有人傳送訊息給Bot時
 bot.on("message", function (event) {
   // event.message.text是使用者傳給bot的訊息
-  event.reply("吵死了！");
-  // const regrex = /你|誰|介紹|you|yourself|hello|你好|hi/gi;
+  const regrex = /你|誰|介紹|you|yourself|hello|你好|hi/gi;
+  if (regrex.event.message.text) {
+    event.reply("我是Danny");
+  } else {
+    event.reply("吵死了！");
+  }
   // if (regrex.test(event.message.text)) {
   //   event.reply(
   //     "我是Danny,剛結束長達9個月的全端網路開發課程，熱愛教育與電商平台，正在積極尋找網路開發的職缺!對我有興趣的話可以參考我的履歷 https://www.cakeresume.com/s03411"
